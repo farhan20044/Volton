@@ -1,0 +1,41 @@
+﻿body {
+}
+
+.border-top-blue {
+    border-top: 2px #005ca9 solid;
+}
+
+.text-small {
+    font-size: 0.90rem;
+}
+
+.text-primary {
+    color: #005ca9 !important;
+}
+
+
+
+
+
+.option-card {
+    position: relative;
+    width: 150px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .option-card:hover {
+        background-color: #6c757d; /* darker gray on hover */
+    }
+
+    .option-card.active {
+        background-color: #227130 !important; /* green active */
+    }
+
+.checkmark {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    font-size: 1.2rem;
+}

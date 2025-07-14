@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Volton</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Volton.styles.css" asp-append-version="true" />
+
+    <style>
+        .border-top-blue{
+            border-top: 2px #005ca9 solid;
+        }
+        .text-small{
+            font-size: 0.8rem;
+        }
+        .text-primary{
+            color: #005ca9 !important;
+        }
+    </style>
+</head>
+<body style="overflow-x:hidden">
+    <header>
+        <nav>
+            <div class="d-flex flex-row align-content-center justify-content-between">
+            @* left *@
+                <div class="ms-5 mt-2">
+                    <img src="~/images/company_logo.png" alt="Logo" height="80" width="100" />
+                </div>
+            @* middle *@
+                <div style="color: #005ca9" class="m-3 d-flex flex-column align-items-center justify-content-center">
+                    <h3 class="mb-1">Welcome to online Application</h3>
+                    <p>Choose what interests you</p>
+                </div>
+            @* right *@
+                <div class="me-5 mt-3">
+                    <img src="~/images/call_icon.png" alt="Call Number" height="38" width="108" />
+                </div>
+            </div>
+        </nav>
+        
+    </header>
+
+    @*Render Body Content*@
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+    <footer class="footer border-top-blue">
+        <div class="container-fluid px-0 ">
+            <div class="row text-center text-md-start align-items-center">
+
+                <!-- Left Image -->
+                <div class="col-lg-4 col-md-4 mb-md-0 d-flex justify-content-center justify-content-md-start px-0">
+                    <img src="~/images/left_footer.png" alt="left-footer" class="img-fluid " />
+                </div>
+
+                <!-- Center -->
+                <div class="col-lg-4 col-md-4 text-center ">
+                    <div class="d-flex flex-column lh-sm">
+                        <a href="#" class="text-decoration-none text-small mb-0">Contact</a>
+                        <a href="#" class="text-decoration-none text-small mb-0">Privacy</a>
+                        <span class="text-small text-primary m-0">
+                            © 2020 volton.gr | All rights reserved
+                            Competent Regulatory Authority: RAE
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Right Image -->
+                <div class="col-lg-4 col-md-4 d-flex justify-content-center justify-content-md-end px-0">
+                    <img src="~/images/right_footer.png" alt="right-footer" class="img-fluid " />
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

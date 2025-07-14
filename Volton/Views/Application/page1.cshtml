@@ -1,0 +1,106 @@
+﻿@{
+    ViewData["Title"] = "Online Application - Step 1";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <link href="~/css/Common.css" rel="stylesheet" />
+    <link href="~/css/page1.css" rel="stylesheet" />
+    <link href="~/css/Cards.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+</head>
+<div class="container p-0 m-0">
+    <a href="/" class="text-primary fw-semibold text-decoration-none">&lt; Back to home page</a>
+
+
+    <!-- Form -->
+    <form method="post" asp-action="Step1">
+
+        <!-- Cards Section -->
+        <div class="text-center mb-4">
+            <label class="text-primary text-small ">I'm interested in:</label>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+
+                <div class="option-card bg-secondary" onclick="">
+                    <div class="checkmark"><i class="fas fa-check-circle"></i></div>
+                    <img src="~/images/home.png" alt="Home" class="img-fluid mb-2" style="width: 40px;">
+                    <div class="text-primary fw-small text-small">Home</div>
+                </div>
+
+                <div class="option-card bg-secondary" onclick="">
+                    <div class="checkmark d-none"><i class="fas fa-check-circle"></i></div>
+                    <img src="~/images/company.png" alt="Business" class="img-fluid mb-2" style="width: 40px;">
+                    <div class="text-primary fw-medium text-small">The business</div>
+                </div>
+
+                <div class="option-card bg-secondary" onclick="">
+                    <div class="checkmark d-none"><i class="fas fa-check-circle"></i></div>
+                    <img src="~/images/apartment.png" alt="Apartment" class="img-fluid mb-2" style="width: 40px;">
+                    <div class="text-primary fw-medium text-small">Common area of an apartment building</div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="mb-5">
+            <label class="text-primary">Already a customer?</label>
+            <div class="d-flex gap-3 flex-wrap mt-2">
+                <input type="radio" class="btn-check" name="IsCustomer" id="customerYes" autocomplete="off">
+                <label class="btn btn-secondary" for="customerYes">Yes</label>
+
+                <input type="radio" class="btn-check" name="IsCustomer" id="customerNo" autocomplete="off">
+                <label class="btn btn-secondary" for="customerNo">No</label>
+            </div>
+            
+        </div>
+
+        <div class="mb-5">
+            <label class="text-primary">Interested in a second power supply?</label>
+            <div class="d-flex gap-3 flex-wrap mt-2">
+                <input type="radio" class="btn-check" name="SecondPower" id="powerYes" autocomplete="off">
+                <label class="btn btn-secondary" for="powerYes">Yes</label>
+
+                <input type="radio" class="btn-check" name="SecondPower" id="powerNo" autocomplete="off">
+                <label class="btn btn-secondary" for="powerNo">No</label>
+            </div>
+            
+        </div>
+
+        <div class="mb-5">
+    <label class="text-primary">I'm interested in:</label>
+    <div class="d-flex gap-3 flex-wrap mt-2">
+
+        <input type="radio" class="btn-check" name="InterestType" id="change" autocomplete="off">
+        <label class="btn btn-secondary" for="change">Change provider</label>
+
+        <input type="radio" class="btn-check" name="InterestType" id="new" autocomplete="off">
+        <label class="btn btn-secondary" for="new">New Connection</label>
+
+        <input type="radio" class="btn-check" name="InterestType" id="re" autocomplete="off">
+        <label class="btn btn-secondary" for="re">Re-electrification</label>
+
+    </div>
+</div>
+
+
+        <div class="mb-5">
+            <label class="text-primary">Do you have a Day or Night counter?</label>
+            <div class="d-flex gap-3 flex-wrap mt-2">
+               <input type="radio" class="btn-check" name="CounterType" id="day" autocomplete="off">
+                <label class="btn btn-secondary" for="day">Daily</label>
+
+                <input type="radio" class="btn-check" name="CounterType" id="night" autocomplete="off">
+                <label class="btn btn-secondary " for="night">Nocturnal</label>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="d-flex justify-content-between mt-4">
+            <a class="btn px-4 py-2 text-small" href="#">Previous</a>
+            <button type="submit" class="btn btn-primary px-5 py-2 text-small">Next</button>
+        </div>
+    </form>
+</div>
+

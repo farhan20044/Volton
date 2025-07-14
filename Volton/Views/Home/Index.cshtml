@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<head>
+    <link href="~/css/Home.css" rel="stylesheet" />
+    <link href="~/css/Common.css" rel="stylesheet" />
+    <link href="~/css/page1.css" rel="stylesheet" />
+    <link href="~/css/Cards.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+</head>
+
+<div class="container p-0 ">
+
+    <div class=" mb-4">
+
+        <div class="d-flex justify-content-center gap-5 flex-wrap" id="energyOptions">
+
+            <!-- Electricity -->
+            <div class="option-card bg-secondary p-3" data-value="Electricity">
+                <div class="checkmark ">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <img src="~/images/electricity_icon.png" alt="Electricity" class="img-fluid mb-2" style="width: 60px;">
+                <div class="text-primary fw-medium text-small">Electricity</div>
+            </div>
+
+            <!-- Natural Gas -->
+            <div class="option-card bg-secondary p-3" data-value="Natural Gas">
+                <div class="checkmark d-none">
+                    <i class="fas fa-check-circle text-white"></i>
+                </div>
+                <img src="~/images/gas_icon.png" alt="Natural Gas" class="img-fluid mb-2" style="width: 60px;">
+                <div class="text-primary fw-medium text-small">Natural gas</div>
+            </div>
+
+            <!-- Electricity and Gas -->
+            <div class="option-card bg-secondary p-3" data-value="Electricity and Gas">
+                <div class="checkmark d-none">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <img src="~/images/electricity_gas_icon.png" alt="Electricity and Gas" class="img-fluid mb-2" style="width: 60px;">
+                <div class="text-primary fw-medium text-small">Electricity and Natural Gas</div>
+            </div>
+
+        </div>
+
+        <!-- Hidden field to store selected value -->
+        <input type="hidden" name="EnergySelection" id="energySelection" />
+    </div>
+
+    
+    <div class=" text-end">
+        <a asp-controller="Application" asp-action="page1" class="btn btn-primary">Next</a>
+    </div>
+    
+    
+</div>
+
