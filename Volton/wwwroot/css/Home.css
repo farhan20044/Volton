@@ -5,12 +5,12 @@
     border-top: 2px #005ca9 solid;
 }
 
-.text-small {
-    font-size: 0.90rem;
-}
 
 .text-primary {
     color: #005ca9 !important;
+}
+.top-m15{
+    top: -15px;
 }
 
 
@@ -19,23 +19,33 @@
 
 .option-card {
     position: relative;
-    width: 150px;
-    border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    transition: border-color 0.2s;
 }
 
     .option-card:hover {
-        background-color: #6c757d; /* darker gray on hover */
+        background-color: #6c757d; 
     }
 
     .option-card.active {
-        background-color: #227130 !important; /* green active */
+        border-color: #007bff;
+        background-color: #e6f0ff;
     }
 
 .checkmark {
+    display: none;
     position: absolute;
     top: 8px;
-    right: 10px;
-    font-size: 1.2rem;
+    right: 8px;
+    font-size: 24px;
+    color: #007bff;
+    background: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    z-index: 2;
+}
+.option-card.active .checkmark {
+    display: block;
 }

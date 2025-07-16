@@ -5,56 +5,55 @@
 <head>
     <link href="~/css/Home.css" rel="stylesheet" />
     <link href="~/css/Common.css" rel="stylesheet" />
-    <link href="~/css/page1.css" rel="stylesheet" />
     <link href="~/css/Cards.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    
 </head>
 
-<div class="container p-0 ">
+@model Volton.Models.HomeIndexViewModel
 
-    <div class=" mb-4">
-
-        <div class="d-flex justify-content-center gap-5 flex-wrap" id="energyOptions">
-
-            <!-- Electricity -->
-            <div class="option-card bg-secondary p-3" data-value="Electricity">
-                <div class="checkmark ">
-                    <i class="fas fa-check-circle"></i>
-                </div>
-                <img src="~/images/electricity_icon.png" alt="Electricity" class="img-fluid mb-2" style="width: 60px;">
-                <div class="text-primary fw-medium text-small">Electricity</div>
+<div class="container mt-5 pb-0 ">
+    <form asp-controller="Application" asp-action="Page1" method="post" id="energyForm">
+        <div class="mb-4">
+            <div class="d-flex justify-content-center gap-5 flex-wrap" id="energyOptions">
+                @foreach (var card in Model.Cards)
+                {
+                    <div class="option-card bg-secondary p-3" data-value="@card.Title">
+                        <div class="checkmark d-none">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="text-primary fw-medium text-small mb-4">@card.Title</div>
+                        <img src="@Url.Content(card.ImagePath)" alt="@card.Title" class="img-fluid mb-4" style="width: 60px;">
+                    </div>
+                }
             </div>
 
-            <!-- Natural Gas -->
-            <div class="option-card bg-secondary p-3" data-value="Natural Gas">
-                <div class="checkmark d-none">
-                    <i class="fas fa-check-circle text-white"></i>
-                </div>
-                <img src="~/images/gas_icon.png" alt="Natural Gas" class="img-fluid mb-2" style="width: 60px;">
-                <div class="text-primary fw-medium text-small">Natural gas</div>
+            <div class="text-end mt-5 me-5">
+                <button type="submit" class="btn btn-primary px-5 py-2 text-small disabled" id="nextBtn" tabindex="-1" aria-disabled="true">Next</button>
             </div>
-
-            <!-- Electricity and Gas -->
-            <div class="option-card bg-secondary p-3" data-value="Electricity and Gas">
-                <div class="checkmark d-none">
-                    <i class="fas fa-check-circle"></i>
-                </div>
-                <img src="~/images/electricity_gas_icon.png" alt="Electricity and Gas" class="img-fluid mb-2" style="width: 60px;">
-                <div class="text-primary fw-medium text-small">Electricity and Natural Gas</div>
-            </div>
-
+            <!-- Hidden field to store selected value -->
+            <input type="hidden" name="EnergySelection" id="energySelection" />
         </div>
-
-        <!-- Hidden field to store selected value -->
-        <input type="hidden" name="EnergySelection" id="energySelection" />
-    </div>
-
-    
-    <div class=" text-end">
-        <a asp-controller="Application" asp-action="page1" class="btn btn-primary">Next</a>
-    </div>
-    
-    
+    </form>
 </div>
+
+@section Scripts {
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const optionCards = document.querySelectorAll('.option-card');
+        const nextBtn = document.getElementById('nextBtn');
+        const energySelection = document.getElementById('energySelection');
+
+        optionCards.forEach(card => {
+            card.addEventListener('click', function () {
+                optionCards.forEach(c => c.classList.remove('selected'));
+                this.classList.add('selected');
+                energySelection.value = this.getAttribute('data-value');
+                nextBtn.classList.remove('disabled');
+                nextBtn.removeAttribute('aria-disabled');
+                nextBtn.removeAttribute('tabindex');
+            });
+        });
+    });
+</script>
+}
 

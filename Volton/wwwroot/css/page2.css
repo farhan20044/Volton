@@ -1,0 +1,6 @@
+﻿body {
+}
+.card-img, .card-img-top {
+    border-top-left-radius: calc(1.00rem - 7px);
+    border-top-right-radius: calc(1.00rem - 7px);
+}

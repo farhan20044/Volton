@@ -46,3 +46,38 @@ button.accept-policy {
   white-space: nowrap;
   line-height: 60px;
 }
+
+.footer-middle-images {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 8px;
+}
+
+.footer-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
+.img-behind {
+  z-index: 1;
+  opacity: 0.7; 
+}
+
+.img-front {
+  z-index: 2;
+}
+.border-top-blue {
+    border-top: 2px #005ca9 solid;
+}
+
+.text-small {
+    font-size: 0.8rem;
+}
+
+.text-primary {
+    color: #005ca9 !important;
+}

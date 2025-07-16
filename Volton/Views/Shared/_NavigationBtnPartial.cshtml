@@ -1,0 +1,37 @@
+﻿
+@{
+    int currentStep = ViewData["CurrentStep"] as int? ?? 1;
+    string nextAction = "page2";
+    string prevAction = "page1";
+    switch (currentStep)
+    {
+        case 1:
+            nextAction = "page2";
+            
+            break;
+        case 2:
+            nextAction = "page3";
+            prevAction = "page1";
+            break;
+        case 3:
+            nextAction = "page4";
+            prevAction = "page2";
+            break;
+        case 4:
+            nextAction = "Finish"; // or whatever is next
+            prevAction = "page3";
+            break;
+        default:
+            nextAction = "page2";
+            prevAction = "Index";
+            break;
+    }
+}
+<head>
+    <link href="~/css/Common.css" rel="stylesheet" />
+</head>
+<!-- Navigation -->
+<div class="d-flex justify-content-between mt-5 mb-5 pb-5">
+    <a class="btn px-4 py-2 text-small @(currentStep == 1 ? "disabled" : "")" asp-controller="Application" asp-action="@prevAction">Previous</a>
+    <a class="btn btn-primary px-5 py-2 text-small" asp-controller="Application" asp-action="@nextAction">Next</a>
+</div>

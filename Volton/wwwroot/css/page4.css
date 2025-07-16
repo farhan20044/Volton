@@ -1,0 +1,31 @@
+﻿.tab-card {
+    transition: all 0.3s ease;
+}
+
+.tab-card.active {
+        background-color: #005ca9 !important;
+        color: white !important;
+        height: 140px !important;
+        box-shadow: 0 10px 20px rgba(0, 92, 169, 0.25);
+}
+
+.tab-card.active h6,
+.tab-card.active small {
+            color: white !important;
+}
+
+.tab-card {
+    transition: all 0.3s ease;
+}
+
+.tab-card.active {
+        background-color: #005ca9 !important;
+        color: white !important;
+        margin-bottom: -26px;
+        box-shadow: 0 10px 20px rgba(0, 92, 169, 0.25);
+}
+
+.tab-card.active h6,
+.tab-card.active small {
+            color: white !important;
+        }

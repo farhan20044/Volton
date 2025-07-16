@@ -7,30 +7,18 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Volton.styles.css" asp-append-version="true" />
-
-    <style>
-        .border-top-blue{
-            border-top: 2px #005ca9 solid;
-        }
-        .text-small{
-            font-size: 0.8rem;
-        }
-        .text-primary{
-            color: #005ca9 !important;
-        }
-    </style>
 </head>
-<body style="overflow-x:hidden">
+<body >
     <header>
         <nav>
             <div class="d-flex flex-row align-content-center justify-content-between">
             @* left *@
                 <div class="ms-5 mt-2">
-                    <img src="~/images/company_logo.png" alt="Logo" height="80" width="100" />
+                    <a asp-controller="Home" asp-action="Index" > <img src="~/images/company_logo.png" alt="Logo" height="80" width="100" /> </a>
                 </div>
             @* middle *@
                 <div style="color: #005ca9" class="m-3 d-flex flex-column align-items-center justify-content-center">
-                    <h3 class="mb-1">Welcome to online Application</h3>
+                    <h3 class="mb-1">@(ViewData["HeaderText"] ?? "Welcome to online Application")</h3>
                     <p>Choose what interests you</p>
                 </div>
             @* right *@
@@ -38,8 +26,46 @@
                     <img src="~/images/call_icon.png" alt="Call Number" height="38" width="108" />
                 </div>
             </div>
-        </nav>
-        
+
+            @* stepper *@
+            @{
+                int currentStep = ViewData["CurrentStep"] as int? ?? 1;
+                string StepClass(int step) {
+                    if (step < currentStep) return "bg-success text-white"; // completed (green)
+                    if (step == currentStep) return "bg-primary text-white"; // active (blue)
+                    return "border border-secondary text-secondary bg-white"; // inactive
+                }
+            }
+
+            @if ((ViewData["ShowStepper"] as bool?) == true)
+            {
+                <div class="container-fluid px-0 mt-3 position-relative">
+                    <!-- Back to home link on far left -->
+                    <div class="position-absolute start-0 ms-4">
+                        <a href="/" class="text-primary fw-semibold text-decoration-none ms-4 ">
+                            &lt; Back to home page
+                        </a>
+                    </div>
+                    <!-- Centered stepper -->
+                    <div class="d-flex justify-content-center">
+                        <div class="d-flex flex-wrap align-items-center justify-content-center gap-2 gap-md-3">
+                            @for (int i = 1; i <= 4; i++)
+                            {
+                                <div class="rounded-circle d-flex align-items-center justify-content-center fw-bold @StepClass(i)"
+                                     style="width: 36px; height: 36px;">
+                                    @i
+                                </div>
+                                @if (i < 4)
+                                {
+                                    <div class="bg-light d-none d-sm-block" style="width: 120px; height: 2px;"></div>
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </nav>        
     </header>
 
     @*Render Body Content*@
@@ -49,20 +75,23 @@
         </main>
     </div>
 
-
-    <footer class="footer border-top-blue">
+    @* footer *@
+    <footer class="footer border-top-blue mt-4">
         <div class="container-fluid px-0 ">
             <div class="row text-center text-md-start align-items-center">
 
-                <!-- Left Image -->
-                <div class="col-lg-4 col-md-4 mb-md-0 d-flex justify-content-center justify-content-md-start px-0">
+                <div class="col-lg-4 col-md-4 col-sm-4 mb-md-0 d-flex justify-content-center justify-content-md-start px-0">
                     <img src="~/images/left_footer.png" alt="left-footer" class="img-fluid " />
                 </div>
 
-                <!-- Center -->
-                <div class="col-lg-4 col-md-4 text-center ">
-                    <div class="d-flex flex-column lh-sm">
-                        <a href="#" class="text-decoration-none text-small mb-0">Contact</a>
+                <div class="col-lg-4 col-md-4 col-sm-4 text-center ">
+                    <div class="d-flex align-items-center justify-content-center flex-column lh-sm">
+                        <div class="footer-middle-images">
+                            <img src="~/images/middle_footer_1.png" class="footer-img img-front position-absolute" alt="Footer Image 1" height="50px" width="50px" />
+                            <img src="~/images/middle_footer_2.png" class="footer-img img-behind" alt="Footer Image 2" height="50px" width="50px" />
+                            
+                        </div>
+                        <a href="#" class="text-decoration-none text-small mb-0 ">Contact</a>
                         <a href="#" class="text-decoration-none text-small mb-0">Privacy</a>
                         <span class="text-small text-primary m-0">
                             © 2020 volton.gr | All rights reserved
@@ -71,8 +100,7 @@
                     </div>
                 </div>
 
-                <!-- Right Image -->
-                <div class="col-lg-4 col-md-4 d-flex justify-content-center justify-content-md-end px-0">
+                <div class="col-lg-4 col-md-4 col-sm-4 d-flex justify-content-center justify-content-md-end px-0">
                     <img src="~/images/right_footer.png" alt="right-footer" class="img-fluid " />
                 </div>
 

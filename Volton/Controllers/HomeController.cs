@@ -15,7 +15,16 @@ namespace Volton.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var model = new HomeIndexViewModel
+            {
+                Cards = new List<HomeCardViewModel>
+                {
+                    new HomeCardViewModel { Title = "Electricity", ImagePath = "~/images/electricity_icon.png" },
+                    new HomeCardViewModel { Title = "Natural Gas", ImagePath = "~/images/gas_icon.png" },
+                    new HomeCardViewModel { Title = "Electricity and Gas", ImagePath = "~/images/electricity_gas_icon.png" }
+                }
+            };
+            return View(model);
         }
 
 

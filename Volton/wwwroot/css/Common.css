@@ -1,4 +1,5 @@
-﻿.bg-primary {
+﻿/*colors*/
+.bg-primary {
     background-color: #005ca9 !important;
 }
 .text-primary {
@@ -7,10 +8,17 @@
 .bg-secondary {
     background-color: #FCFCFC !important;
 }
+.bg-lightblue {
+    background-color: #E7F0F7;
+}
+.border-50{
+    border-radius: 50% !important;
+}
+/*buttons*/
 .btn {
     color: #005ca9;
     border: 1px #005ca9 solid !important;
-    border-radius: 5px !important;
+    border-radius: 5px ;
 }
 .btn-primary {
     background-color: #005ca9 !important;
@@ -30,4 +38,58 @@
     color: #005ca9 !important; 
     background-color: #e9ecef !important; 
     
+}
+.btn-lightblue{
+    height:53px;
+    width: 180px;
+    border: none !important;
+}
+
+
+/*scrollbar edits*/
+::-webkit-scrollbar {
+    width: 1px; 
+    height: 8px; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: white; 
+    border-radius: 1px;
+}
+
+::-webkit-scrollbar-track {
+    background: white;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: white;
+}
+
+/*spacings*/
+.letter-spacing-5{
+    letter-spacing: 5px;
+}
+.words-spacing-5{
+    word-spacing: 5px;
+}
+.width-60{
+    width: 60%;
+}
+.width-10 {
+    width: 10%;
+}
+.border-bottom{
+    border-bottom: 2px black solid !important;
+}
+.text-small {
+    font-size: 0.90rem;
+}
+
+.text-medium {
+    font-size: 1.2rem;
+}
+
+.shadow-bottom {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }

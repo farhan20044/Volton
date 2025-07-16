@@ -3,36 +3,80 @@
   "WorkspaceRootPath": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|c:\\users\\farhan\\desktop\\net backend\\volton\\volton\\views\\application\\page1.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|solutionrelative:volton\\views\\application\\page1.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|c:\\users\\farhan\\desktop\\net backend\\volton\\volton\\controllers\\applicationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|solutionrelative:volton\\controllers\\applicationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|c:\\users\\farhan\\desktop\\net backend\\volton\\volton\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|solutionrelative:volton\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|c:\\users\\farhan\\desktop\\net backend\\volton\\volton\\wwwroot\\css\\home.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|solutionrelative:volton\\wwwroot\\css\\home.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|c:\\users\\farhan\\desktop\\net backend\\volton\\volton\\views\\application\\page1.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|solutionrelative:volton\\views\\application\\page1.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|c:\\users\\farhan\\desktop\\net backend\\volton\\volton\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|solutionrelative:volton\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|c:\\users\\farhan\\desktop\\net backend\\volton\\volton\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|solutionrelative:volton\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|c:\\users\\farhan\\desktop\\net backend\\volton\\volton\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|solutionrelative:volton\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|c:\\users\\farhan\\desktop\\net backend\\volton\\volton\\views\\shared\\_cardspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|solutionrelative:volton\\views\\shared\\_cardspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|c:\\users\\farhan\\desktop\\net backend\\volton\\volton\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|solutionrelative:volton\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|c:\\users\\farhan\\desktop\\net backend\\volton\\volton\\views\\application\\page2.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|solutionrelative:volton\\views\\application\\page2.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|c:\\users\\farhan\\desktop\\net backend\\volton\\volton\\wwwroot\\css\\common.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|solutionrelative:volton\\wwwroot\\css\\common.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|c:\\users\\farhan\\desktop\\net backend\\volton\\volton\\wwwroot\\css\\common.css||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|solutionrelative:volton\\wwwroot\\css\\common.css||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|c:\\users\\farhan\\desktop\\net backend\\volton\\volton\\wwwroot\\css\\cards.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|solutionrelative:volton\\wwwroot\\css\\cards.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|c:\\users\\farhan\\desktop\\net backend\\volton\\volton\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|solutionrelative:volton\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|c:\\users\\farhan\\desktop\\net backend\\volton\\volton\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|solutionrelative:volton\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|c:\\users\\farhan\\desktop\\net backend\\volton\\volton\\views\\shared\\_appartmentcontent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|solutionrelative:volton\\views\\shared\\_appartmentcontent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|c:\\users\\farhan\\desktop\\net backend\\volton\\volton\\wwwroot\\css\\page1.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|solutionrelative:volton\\wwwroot\\css\\page1.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|c:\\users\\farhan\\desktop\\net backend\\volton\\volton\\wwwroot\\css\\home.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|solutionrelative:volton\\wwwroot\\css\\home.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|c:\\users\\farhan\\desktop\\net backend\\volton\\volton\\views\\shared\\_homecontent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|solutionrelative:volton\\views\\shared\\_homecontent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|c:\\users\\farhan\\desktop\\net backend\\volton\\volton\\views\\shared\\_businesscontent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|solutionrelative:volton\\views\\shared\\_businesscontent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|c:\\users\\farhan\\desktop\\net backend\\volton\\volton\\views\\shared\\_navigationbtnpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|solutionrelative:volton\\views\\shared\\_navigationbtnpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|c:\\users\\farhan\\desktop\\net backend\\volton\\volton\\views\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|solutionrelative:volton\\views\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|c:\\users\\farhan\\desktop\\net backend\\volton\\volton\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1D1A6F55-CA97-4EE4-BE9A-0C1F22D311F2}|Volton\\Volton.csproj|solutionrelative:volton\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\Views\\Home\\_Navbar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -46,7 +90,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,26 +98,194 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "site.css",
-              "DocumentMoniker": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "Volton\\wwwroot\\css\\site.css",
-              "ToolTip": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "Volton\\wwwroot\\css\\site.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-07-14T06:15:34.731Z",
+              "DocumentIndex": 6,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\Models\\Customer.cs",
+              "RelativeDocumentMoniker": "Volton\\Models\\Customer.cs",
+              "ToolTip": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\Models\\Customer.cs",
+              "RelativeToolTip": "Volton\\Models\\Customer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-15T09:12:53.193Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 12,
+              "Title": "page1.css",
+              "DocumentMoniker": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\wwwroot\\css\\page1.css",
+              "RelativeDocumentMoniker": "Volton\\wwwroot\\css\\page1.css",
+              "ToolTip": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\wwwroot\\css\\page1.css",
+              "RelativeToolTip": "Volton\\wwwroot\\css\\page1.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-07-15T08:07:23.074Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "page2.cshtml",
+              "DocumentMoniker": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\Views\\Application\\page2.cshtml",
+              "RelativeDocumentMoniker": "Volton\\Views\\Application\\page2.cshtml",
+              "ToolTip": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\Views\\Application\\page2.cshtml",
+              "RelativeToolTip": "Volton\\Views\\Application\\page2.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-15T07:44:34.552Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "_AppartmentContent.cshtml",
+              "DocumentMoniker": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\Views\\Shared\\_AppartmentContent.cshtml",
+              "RelativeDocumentMoniker": "Volton\\Views\\Shared\\_AppartmentContent.cshtml",
+              "ToolTip": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\Views\\Shared\\_AppartmentContent.cshtml",
+              "RelativeToolTip": "Volton\\Views\\Shared\\_AppartmentContent.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-15T07:10:06.288Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "site.js",
+              "DocumentMoniker": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "Volton\\wwwroot\\js\\site.js",
+              "ToolTip": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "Volton\\wwwroot\\js\\site.js",
+              "ViewState": "AgIAACsAAAAAAAAAAAAUwD0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-07-15T07:03:25.6Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "_BusinessContent.cshtml",
+              "DocumentMoniker": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\Views\\Shared\\_BusinessContent.cshtml",
+              "RelativeDocumentMoniker": "Volton\\Views\\Shared\\_BusinessContent.cshtml",
+              "ToolTip": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\Views\\Shared\\_BusinessContent.cshtml",
+              "RelativeToolTip": "Volton\\Views\\Shared\\_BusinessContent.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-15T06:54:11.401Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "_HomeContent.cshtml",
+              "DocumentMoniker": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\Views\\Shared\\_HomeContent.cshtml",
+              "RelativeDocumentMoniker": "Volton\\Views\\Shared\\_HomeContent.cshtml",
+              "ToolTip": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\Views\\Shared\\_HomeContent.cshtml",
+              "RelativeToolTip": "Volton\\Views\\Shared\\_HomeContent.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-15T06:53:11.441Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ApplicationController.cs",
+              "DocumentMoniker": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\Controllers\\ApplicationController.cs",
+              "RelativeDocumentMoniker": "Volton\\Controllers\\ApplicationController.cs",
+              "ToolTip": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\Controllers\\ApplicationController.cs",
+              "RelativeToolTip": "Volton\\Controllers\\ApplicationController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-15T06:45:00.814Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_CardsPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\Views\\Shared\\_CardsPartial.cshtml",
+              "RelativeDocumentMoniker": "Volton\\Views\\Shared\\_CardsPartial.cshtml",
+              "ToolTip": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\Views\\Shared\\_CardsPartial.cshtml",
+              "RelativeToolTip": "Volton\\Views\\Shared\\_CardsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-15T06:12:07.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "Volton\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "Volton\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-14T10:18:31.812Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "_Layout.cshtml.css",
+              "DocumentMoniker": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\Views\\Shared\\_Layout.cshtml.css",
+              "RelativeDocumentMoniker": "Volton\\Views\\Shared\\_Layout.cshtml.css",
+              "ToolTip": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\Views\\Shared\\_Layout.cshtml.css",
+              "RelativeToolTip": "Volton\\Views\\Shared\\_Layout.cshtml.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-07-14T10:17:34.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "_NavigationBtnPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\Views\\Shared\\_NavigationBtnPartial.cshtml",
+              "RelativeDocumentMoniker": "Volton\\Views\\Shared\\_NavigationBtnPartial.cshtml",
+              "ToolTip": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\Views\\Shared\\_NavigationBtnPartial.cshtml",
+              "RelativeToolTip": "Volton\\Views\\Shared\\_NavigationBtnPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-14T10:17:22.207Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Home.css",
+              "DocumentMoniker": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\wwwroot\\css\\Home.css",
+              "RelativeDocumentMoniker": "Volton\\wwwroot\\css\\Home.css",
+              "ToolTip": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\wwwroot\\css\\Home.css",
+              "RelativeToolTip": "Volton\\wwwroot\\css\\Home.css",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-07-14T09:02:40.426Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Cards.css",
+              "DocumentMoniker": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\wwwroot\\css\\Cards.css",
+              "RelativeDocumentMoniker": "Volton\\wwwroot\\css\\Cards.css",
+              "ToolTip": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\wwwroot\\css\\Cards.css",
+              "RelativeToolTip": "Volton\\wwwroot\\css\\Cards.css",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAABsAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-07-14T08:23:33.984Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Common.css",
               "DocumentMoniker": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\wwwroot\\css\\Common.css",
               "RelativeDocumentMoniker": "Volton\\wwwroot\\css\\Common.css",
               "ToolTip": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\wwwroot\\css\\Common.css",
               "RelativeToolTip": "Volton\\wwwroot\\css\\Common.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-07-14T06:15:25.026Z",
               "EditorCaption": ""
@@ -81,38 +293,12 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Home.css",
-              "DocumentMoniker": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\wwwroot\\css\\Home.css",
-              "RelativeDocumentMoniker": "Volton\\wwwroot\\css\\Home.css",
-              "ToolTip": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\wwwroot\\css\\Home.css",
-              "RelativeToolTip": "Volton\\wwwroot\\css\\Home.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-07-14T06:15:19.57Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Common.css",
-              "DocumentMoniker": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\wwwroot\\css\\Common.css",
-              "RelativeDocumentMoniker": "Volton\\wwwroot\\css\\Common.css",
-              "ToolTip": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\wwwroot\\css\\Common.css",
-              "RelativeToolTip": "Volton\\wwwroot\\css\\Common.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-07-14T06:14:34.3Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "page1.cshtml",
               "DocumentMoniker": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\Views\\Application\\page1.cshtml",
               "RelativeDocumentMoniker": "Volton\\Views\\Application\\page1.cshtml",
               "ToolTip": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\Views\\Application\\page1.cshtml",
               "RelativeToolTip": "Volton\\Views\\Application\\page1.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAABBAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABUAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-07-13T15:11:35.36Z",
               "EditorCaption": ""
@@ -125,26 +311,27 @@
               "RelativeDocumentMoniker": "Volton\\Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "Volton\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAABEAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-07-11T21:22:03.213Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Volton\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Volton\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAADwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-11T18:57:02.836Z"
+              "WhenOpened": "2025-07-11T18:57:02.836Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 19,
               "Title": "_Navbar.cshtml",
               "DocumentMoniker": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\Views\\Home\\_Navbar.cshtml",
               "RelativeDocumentMoniker": "Volton\\Views\\Home\\_Navbar.cshtml",
@@ -156,15 +343,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Volton\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\Farhan\\Desktop\\net backend\\Volton\\Volton\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Volton\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwA8AAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-11T18:49:20.352Z"
+              "WhenOpened": "2025-07-11T18:49:20.352Z",
+              "EditorCaption": ""
             }
           ]
         }

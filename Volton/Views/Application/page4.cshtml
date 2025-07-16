@@ -1,0 +1,103 @@
+﻿
+@{
+    ViewData["Title"] = "Supporting Documents";
+    ViewData["HeaderText"] = "Online Application";
+    ViewData["ShowStepper"] = true;
+    ViewData["CurrentStep"] = 4;
+    ViewData["Title"] = "Warranty Calculation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    
+
+</style>
+
+<!-- Load Font Awesome for icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+<link href="~/css/page4.css" rel="stylesheet" />
+
+
+<div class="container-fluid px-4 px-md-5 my-5 mt-5">
+        <h5 class="fw-semibold text-primary mb-4 text-center text-md-start ">
+            Find out the supporting documents you will need to complete your online application!
+        </h5>
+
+        <div class="row g-3 mb-4 align-items-stretch">
+
+
+    
+<div class="col-12 col-md-6 col-lg-3">
+            <div class="card border-primary text-primary rounded-3 h-100 shadow-sm tab-card py-3">
+            <div class="card-body text-center">
+                <h6 class="fw-bold mb-1">Change provider</h6>
+                <small>The meter is in another name</small>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Tab 2 -->
+    <div class="col-12 col-md-6 col-lg-3">
+            <div class="card border-primary text-primary rounded-3 h-100 shadow-sm tab-card py-3">
+            <div class="card-body text-center">
+                <h6 class="fw-bold mb-1">Change provider</h6>
+                <small>The meter is in another name</small>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tab 3 -->
+    <div class="col-12 col-md-6 col-lg-3">
+        <div class="card border-primary text-primary rounded-3 h-100 shadow-sm tab-card py-3">
+            <div class="card-body text-center">
+                <h6 class="fw-bold mb-1">Initial Electrification</h6>
+                <small>New connection</small>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tab 4 -->
+    <div class="col-12 col-md-6 col-lg-3">
+        <div class="card border-primary text-primary rounded-3 h-100 shadow-sm tab-card d-flex align-items-center justify-content-center text-center py-3">
+            <div class="card-body">
+                <h6 class="fw-bold mb-0">Re-electrification</h6>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <!-- Necessary Documents Section -->
+        <div class="border rounded p-4">
+            <h5 class="fw-bold text-primary mb-4">Necessary Documents:</h5>
+
+            <p class="mb-2 text-success fw-bold ">1. Identity</p>
+            <p class="text-secondary">
+                Photocopy of ID (2 sides) or Passport or Residence Permit or Driver’s License
+            </p>
+
+            <p class="mb-2 text-success fw-bold mt-3">2. Account</p>
+            <ul class="text-secondary ps-3">
+                <li>Copy of last bill</li>
+                <li>Proof of payment if the due date has passed</li>
+            </ul>
+        </div>
+    </div>
+
+
+@Html.Partial("_NavigationBtnPartial")
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        document.querySelectorAll('.tab-card').forEach(card => {
+            card.addEventListener('click', function () {
+                document.querySelectorAll('.tab-card').forEach(c => c.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+
+}
+
