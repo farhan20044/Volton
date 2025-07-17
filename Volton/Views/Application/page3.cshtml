@@ -1,82 +1,122 @@
-﻿
+@model Volton.Models.WarrantyViewModel
+
 @{
     ViewData["HeaderText"] = "Online Application";
     ViewData["ShowStepper"] = true;
     ViewData["CurrentStep"] = 3;
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
-@{
     ViewData["Title"] = "Warranty Calculation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!-- Load Font Awesome for icons -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+<body class="">
+<div class="container px-4 px-md-5 my-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8">
+            <!-- Controls max width -->
 
-<div class="container my-5">
-    <h4 class="text-primary fs-2 fw-light mb-4">Warranty Calculation</h4>
+            <h4 class="text-primary fs-2 fw-light mb-4">Warranty Calculation</h4>
 
-    <p class="text-primary w-75 words-spacing-5 width-60">
-        To calculate the Guarantee, fill in the guarantee you were charged to your previous supplier (<strong>i</strong>) and the agreed power (KVA) (<strong>i</strong>) of your supply.
-        More about the Warranty Policy
-        <a href="#" class="text-decoration-none fw-semibold text-primary fw-bold">here</a>.
-    </p>
+            <p class="text-primary words-spacing-5">
+                To calculate the Guarantee, fill in the guarantee you were charged to your previous supplier (<strong>i</strong>) and the agreed power (KVA) (<strong>i</strong>) of your supply.
+                More about the Warranty Policy
+                <a href="#" class="text-decoration-none fw-semibold text-primary fw-bold">here</a>.
+            </p>
 
-    <form method="post">    
-        <!-- Previous Supplier Warranty -->
-        <div class="mb-4">
-            <label class="form-label fw-semibold text-primary mb-5">
-                Previous Supplier Warranty
-                <i class="fas fa-info-circle text-muted ms-1 text-primary" title="Info about previous warranty"></i>
-            </label>
-            <div class="input-group width-10 border-bottom border-0">
-                <span class="input-group-text bg-white border-0">€</span>
-                <input  class="form-control border-0" />
+            <form asp-controller="Application" asp-action="Step3" method="post">
+                <!-- Previous Supplier Warranty -->
+                <div class="mb-4">
+                    <label class="form-label fw-semibold text-primary mb-2 ">
+                        Previous Supplier Warranty
+                        <i class="fas fa-info-circle text-muted ms-1 text-primary" title="Info about previous warranty"></i>
+                    </label>
+                    <div class="input-group border-bottom border-0 width-10">
+                        <span class="input-group-text bg-white border-0">€</span>
+                        <input name="warentyInfo" id="warentyInfo" class="form-control border-0" value="@Model.warentyInfo" />
+                    </div>
+                    <span class="text-danger"></span>
+                </div>
+
+                <!-- Agreed Supply Power -->
+                <div class="mb-4">
+                    <label class="form-label fw-semibold text-primary mb-2">
+                        Agreed supply power
+                        <i class="fas fa-info-circle text-muted ms-1 text-primary" title="Agreed power in KVA"></i>
+                    </label>
+                    <select asp-for="AgreedSupplyPower" id="agreedSupplyPower" class="form-select width-10 border-bottom border-0 rounded-0">
+                        <option value="" disabled selected>Select Power</option>
+                        <option value="15">15</option>
+                        <option value="30">30</option>
+                        <option value="50">50</option>
+                    </select>
+                    <span class="text-danger"></span>
+                </div>
+                            
+            
+
+            <!-- Guarantee Conditions -->
+            <div class="mt-5 text-primary">
+                <p class="fw-semibold text-primary">Your guarantee will be zero:</p>
+                <div class="text-secondary">
+                    <p class="text-primary mb-4 ">
+                        1. By choosing the <strong>bank standing order</strong> as the account payment method and
+                        <strong>activating*</strong> it before the expiry of your first Account.
+                        <br />
+                        <small>*To activate the bank standing order, you should contact your bank.</small>
+                    </p>
+                    <p class="mt-2 text-primary">
+                        2. By attaching* the last paid invoice to your previous supplier.
+                        <br />
+                        <small>*It should be attached together with the other supporting documents that will be requested in the next step.</small>
+                    </p>
+                </div>
             </div>
-            <span  class="text-danger"></span>
-        </div>
-
-        <!-- Agreed Supply Power -->
-        <div class="mb-4">
-            <label class="form-label fw-semibold text-primary mb-4">
-                Agreed supply power
-                <i class="fas fa-info-circle text-muted ms-1 text-primary" title="Agreed power in KVA"></i>
-            </label>
-            <select class="form-select w-auto border-bottom border-0 rounded-0">
-                <option value="15">15</option>
-                <option value="30">30</option>
-                <option value="50">50</option>
-            </select>
-            <span class="text-danger"></span>
-        </div>
-
-        
-    </form>
-
-    <!-- Guarantee Conditions -->
-    <div class="mt-5 text-primary">
-        <p class="fw-semibold text-primary">Your guarantee will be zero:</p>
-        <div class="text-secondary">
-            <p class="text-primary mb-4 ">
-                1. By choosing the <strong>bank standing order</strong> as the account payment method and
-                <strong>activating*</strong> it before the expiry of your first Account.
-                <br />
-                <small>*To activate the bank standing order, you should contact your bank.</small>
-            </p>
-            <p class="mt-2 text-primary">
-                2. By attaching* the last paid invoice to your previous supplier.
-                <br />
-                <small>*It should be attached together with the other supporting documents that will be requested in the next step.</small>
-            </p>
+                    @{
+                        ViewData["IsFormSubmission"] = true;
+                    }
+                    @Html.Partial("_NavigationBtnPartial")
+                </form>
         </div>
     </div>
 </div>
 
+</body>
+
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const warrantyInput = document.getElementById('warentyInfo');
+            const powerSelect = document.getElementById('agreedSupplyPower');
+            const nextBtn = document.getElementById('nextBtn');
+
+            function checkInputs() {
+                const warrantyValue = warrantyInput.value.trim();
+                const powerValue = powerSelect.value;
+
+                if (warrantyValue !== '' && powerValue !== '') {
+                    if (nextBtn) {
+                        nextBtn.classList.remove('disabled');
+                        nextBtn.removeAttribute('aria-disabled');
+                        nextBtn.removeAttribute('tabindex');
+                    }
+                } else {
+                    if (nextBtn) {
+                        nextBtn.classList.add('disabled');
+                        nextBtn.setAttribute('aria-disabled', 'true');
+                        nextBtn.setAttribute('tabindex', '-1');
+                    }
+                }
+            }
+
+            warrantyInput.addEventListener('input', checkInputs);
+            powerSelect.addEventListener('change', checkInputs);
+
+            // Initial check in case the page is reloaded with values
+            checkInputs();
+        });
+    </script>
 }
-
-
-@Html.Partial("_NavigationBtnPartial")
 
 

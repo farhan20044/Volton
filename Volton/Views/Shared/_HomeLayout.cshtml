@@ -20,7 +20,8 @@
                 </div>
             @* middle *@
                 <div style="color: #005ca9" class="m-3 d-flex flex-column align-items-center justify-content-center">
-                    <h3 class="mb-1">Online Application</h3>
+                    <h3 class="mb-1">Welcome to online Application</h3>
+                    <p>Choose what interests you</p>
                 </div>
             @* right *@
                 <div class="me-5 mt-3">
@@ -38,8 +39,7 @@
                 }
             }
 
-            @if ((ViewData["ShowStepper"] as bool?) == true)
-{
+            @if ((ViewData["ShowStepper"] as bool?) == true){
     <div class="container-fluid px-0 mt-3 position-relative">
         <div class="row align-items-center">
             
@@ -88,7 +88,41 @@
         </main>
     </div>
 
-    @Html.Partial("_Footer")
+    @* footer *@
+    <footer class="footer border-top-blue"> 
+        <div class="container-fluid px-0 ">
+            <div class="row text-center text-md-start align-items-center">
+
+                <div class="col-lg-4 col-md-4 col-sm-4 mb-md-0 d-none d-sm-flex justify-content-center justify-content-md-start px-0">
+                    <img src="~/images/left_footer.png" alt="left-footer" class="img-fluid" />
+                </div>
+
+
+                <div class="col-lg-4 col-md-4 col-sm-4 text-center ">
+                    <div class="d-flex align-items-center justify-content-center flex-column lh-sm">
+                        <div class="footer-middle-images .d-none d-sm-flex">
+                            <img src="~/images/middle_footer_1.png" class="footer-img img-front position-absolute" alt="Footer Image 1" height="50px" width="50px" />
+                            <img src="~/images/middle_footer_2.png" class="footer-img img-behind " alt="Footer Image 2" height="50px" width="50px" />
+                        </div>
+                        <a href="#" class="text-decoration-none text-small mb-0 ">Contact</a>
+                        <a href="#" class="text-decoration-none text-small mb-0">Privacy</a>
+                        <span class="text-small text-primary m-0">
+                            © 2020 volton.gr | All rights reserved
+                            Competent Regulatory Authority: RAE
+                        </span>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 d-none d-sm-flex justify-content-center justify-content-md-end px-0">
+                    <img src="~/images/right_footer.png" alt="right-footer" class="img-fluid" />
+                </div>
+
+
+            </div>
+        </div>
+    </footer>
+
+
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

@@ -2,6 +2,7 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+
 document.addEventListener('DOMContentLoaded', function () {
     const optionCards = document.querySelectorAll('.option-card');
     const hiddenInput = document.getElementById('energySelection');
@@ -30,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
 
-            // Show/hide partials based on card selection
+            // Show/hide partials based on card selection in page 1
             const value = this.getAttribute('data-value');
             const homeContent = document.getElementById('homeContent');
             const businessContent = document.getElementById('businessContent');
@@ -54,6 +55,17 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     // Initial state
     updateNextButtonState();
+});
+
+// Make 'Get it' button green when pressed (page 2)
+document.addEventListener('DOMContentLoaded', function () {
+    const getItButtons = document.querySelectorAll('.btn.btn-secondary.w-75.mb-2.shadow-bottom');
+    getItButtons.forEach(btn => {
+        btn.addEventListener('click', function () {
+            getItButtons.forEach(b => b.classList.remove('btn-get-it-active'));
+            this.classList.add('btn-get-it-active');
+        });
+    });
 });
 
 

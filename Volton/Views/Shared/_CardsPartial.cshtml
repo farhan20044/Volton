@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Volton.Models.HomeCardViewModel>
+@model IEnumerable<Volton.Models.HomeCardViewModel>
 
 <head>
     <link href="~/css/Common.css" rel="stylesheet" />
@@ -6,13 +6,19 @@
     <link href="~/css/Cards.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
+
 <div class="mb-4">
     <label class="text-primary text-small d-block text-start mb-2">I'm interested in:</label>
 
     <div class="d-flex justify-content-center gap-3 flex-wrap">
         @foreach (var card in Model)
         {
-            <div class="option-card bg-secondary" data-value="@card.Title">
+            var value = card.Title.ToLower().Contains("home") ? "home"
+                : card.Title.ToLower().Contains("business") ? "business"
+                : card.Title.ToLower().Contains("apartment") ? "appartment"
+                : "";
+
+            <div class="option-card bg-secondary" data-value="@value">
                 <div class="checkmark d-none"><i class="fas fa-check-circle"></i></div>
                 <img src="@Url.Content(card.ImagePath)" alt="@card.Title" class="img-fluid mb-2" style="width: 40px;">
                 <div class="text-primary fw-medium text-small">@card.Title</div>
@@ -20,3 +26,6 @@
         }
     </div>
 </div>
+
+
+

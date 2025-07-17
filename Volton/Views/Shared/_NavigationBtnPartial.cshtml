@@ -1,4 +1,4 @@
-﻿
+
 @{
     int currentStep = ViewData["CurrentStep"] as int? ?? 1;
     string nextAction = "page2";
@@ -18,7 +18,7 @@
             prevAction = "page2";
             break;
         case 4:
-            nextAction = "Finish"; // or whatever is next
+            nextAction = "EmailVerification"; 
             prevAction = "page3";
             break;
         default:
@@ -33,5 +33,12 @@
 <!-- Navigation -->
 <div class="d-flex justify-content-between mt-5 mb-5 pb-5">
     <a class="btn px-4 py-2 text-small @(currentStep == 1 ? "disabled" : "")" asp-controller="Application" asp-action="@prevAction">Previous</a>
-    <a class="btn btn-primary px-5 py-2 text-small" asp-controller="Application" asp-action="@nextAction">Next</a>
+    @if (ViewData["IsFormSubmission"] as bool? == true)
+    {
+        <button type="submit" id="nextBtn" class="btn btn-primary px-5 py-2 text-small disabled" aria-disabled="true" tabindex="-1">Next</button>
+    }
+    else
+    {
+        <a class="btn btn-primary px-5 py-2 text-small" asp-controller="Application" asp-action="@nextAction">Next</a>
+    }
 </div>

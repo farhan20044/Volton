@@ -1,4 +1,4 @@
-﻿@model Volton.Models.HomeIndexViewModel
+@model Volton.Models.HomeIndexViewModel
 @{
     ViewData["Title"] = "Online Application - Step 1";
     ViewData["HeaderText"] = "Online Application";
@@ -13,9 +13,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
 </head>
-<div class="container p-0 m-0">    
+<div class="container p-0 m-0">
 
     <form method="post" asp-action="Step1">
+            <input type="hidden" name="selectedOption" id="selectedOption" />
 
         <!-- Cards Section -->
         @Html.Partial("_CardsPartial", Model.Cards)
@@ -31,8 +32,39 @@
         </div>
 
         @* Navigation buttons *@
+        @{ ViewData["IsFormSubmission"] = true; }
         @Html.Partial("_NavigationBtnPartial")
 
     </form>
 </div>
 
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const optionCards = document.querySelectorAll('.option-card');
+            const selectedOption = document.getElementById('selectedOption');
+            const nextBtn = document.getElementById('nextBtn'); // Assuming the next button has this ID from the partial view
+
+            optionCards.forEach(card => {
+                card.addEventListener('click', function () {
+                    // Remove selection from all cards
+                    optionCards.forEach(c => c.classList.remove('selected'));
+                    // Add selection to the clicked card
+                    this.classList.add('selected');
+                    // Update the hidden input's value
+                    selectedOption.value = this.getAttribute('data-value');
+                    // Enable the next button
+                    if (nextBtn) {
+                        nextBtn.classList.remove('disabled');
+                        nextBtn.removeAttribute('aria-disabled');
+                        nextBtn.removeAttribute('tabindex');
+                    }
+                });
+            });
+
+
+        });
+    </script>
+}
+
+        

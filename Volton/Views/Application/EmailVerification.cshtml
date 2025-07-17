@@ -1,0 +1,38 @@
+@{
+    ViewData["Title"] = "Email Verification";
+    ViewData["ShowStepper"] = true;
+    ViewData["CurrentStep"] = 4;
+}
+
+<div class="container mt-5 mb-5">
+    <div class="row justify-content-center  my-5 py-5">
+        <div class="col-md-6 text-center mb-5">
+
+            <!-- Title and Subtitle -->
+            <h5 class="text-primary fw-semibold fs-5">
+                Fill in your email and click Verify to receive a confirmation link.
+            </h5>
+            <p class="text-primary mb-4">
+                In case you did not receive a confirmation email, please fill in a new one.
+            </p>
+
+            <!-- Email Input + Verify Button -->
+            <form method="post">
+                <div class="mb-2 d-flex align-items-center justify-content-center">
+                    <input type="email" class="form-control text-center border-0 width-50 border-bottom-disabled" placeholder="E-mail" required />
+                </div>
+                <button type="submit" class="btn btn-get-it-active px-5 text-white">
+                    <span class="px-4">Verification</span>
+                </button>
+            </form>
+            
+        </div>
+        
+    </div>
+
+
+    <div class="container mx-md-5 mx-sm-5 mx-lg-5 px-lg-5">
+        @Html.Partial("_NavigationBtnPartial")
+    </div>
+    
+</div>

@@ -1,4 +1,7 @@
-﻿/*colors*/
+﻿.overflow-x-hidden{
+    overflow-x: hidden !important;
+}
+/*colors*/
 .bg-primary {
     background-color: #005ca9 !important;
 }
@@ -10,6 +13,9 @@
 }
 .bg-lightblue {
     background-color: #E7F0F7;
+}
+* {
+/*    font-family: 'Noto Sans', sans-serif;*/
 }
 .border-50{
     border-radius: 50% !important;
@@ -44,6 +50,12 @@
     width: 180px;
     border: none !important;
 }
+.btn-green, .btn-get-it-active {
+    background-color: #227130 !important;
+    color: white !important;
+    border: 2px #227130 solid  !important;
+    box-shadow: none !important;
+}
 
 
 /*scrollbar edits*/
@@ -76,6 +88,9 @@
 .width-60{
     width: 60%;
 }
+.width-50 {
+    width: 36%;
+}
 .width-10 {
     width: 10%;
 }
@@ -92,4 +107,8 @@
 
 .shadow-bottom {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+.border-bottom-disabled {
+    border-bottom: 2px #D3D3D3 solid !important;
+    border-radius: 0px !important;
 }

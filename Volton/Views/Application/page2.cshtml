@@ -1,4 +1,4 @@
-﻿
+@model Volton.Models.PackagesViewModel
 @{
     ViewData["Title"] = "Choose Your Package";
     ViewData["HeaderText"] = "Online Application";
@@ -9,92 +9,114 @@
     <link href="~/css/page2.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
-<div class="container py-5">
-    
-    <div class="container my-5 ms-5 ps-5">
-        <div class="row align-items-center justify-content-between">
-            <!-- Left Text Section -->
-            <div class="col-md-6">
-                <button class="btn btn-lightblue ms-4 mb-2 border-none bg-lightblue">Daily</button>
-                <h4 class="fw-semibold text-primary text-medium ms-1 mb-2">Choose the package that suits you</h4>
-                <p class="text-primary ms-1 mb-0">
-                    Read the general conditions
-                    <a href="#" class="fw-bold text-primary text-decoration-none">here</a>
-                </p>
-            </div>
 
-            <!-- Right Navigation Section -->
-            <div class="col-md-6 d-flex justify-content-end align-items-center gap-3 ">
-                <!-- Dots -->
-                <div class="d-flex gap-1">
-                    <span class="dot bg-primary rounded-circle" style="width: 8px; height: 8px;"></span>
-                    <span class="dot bg-secondary rounded-circle" style="width: 8px; height: 8px;"></span>
+<form asp-controller="Application" asp-action="Step2" method="post">
+    <input type="hidden" id="selectedPackage" name="selectedPackage" value="" />
+    <div class="container py-5">
+        <div class="container my-5 ms-5 ps-5">
+            <div class="row align-items-center justify-content-between">
+                <!-- Left Text Section -->
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-lightblue ms-4 mb-2 border-none bg-lightblue">Daily</button>
+                    <h4 class="fw-semibold text-primary text-medium ms-1 mb-2">Choose the package that suits you</h4>
+                    <p class="text-primary ms-1 mb-0">
+                        Read the general conditions
+                        <a href="#" class="fw-bold text-primary text-decoration-none">here</a>
+                    </p>
                 </div>
-
-                <!-- Arrows -->
-                <div class="d-flex gap-3">
-                    <button class="btn btn-outline-primary  px-2 py-1 border-50" style="width: 37px;">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button class="btn btn-outline-primary px-2 py-1 border-50" style="width: 37px; height: 37px;">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
+                <!-- Right Navigation Section -->
+                <div class="col-md-6 d-flex justify-content-end align-items-center gap-3 ">
+                    <!-- Dots -->
+                    <div class="d-flex gap-1">
+                        <span class="dot bg-primary rounded-circle" style="width: 8px; height: 8px;"></span>
+                        <span class="dot bg-secondary rounded-circle" style="width: 8px; height: 8px;"></span>
+                    </div>
+                    <!-- Arrows -->
+                    <div class="d-flex gap-3">
+                        <button type="button" class="btn btn-outline-primary  px-2 py-1 border-50" style="width: 37px;">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-primary px-2 py-1 border-50" style="width: 37px; height: 37px;">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <div class="row justify-content-center g-4 mx-lg-5 px-lg-5 mx-md-0 px-md-0">
+            @foreach (var pkg in Model.Packages)
+            {
+                <div class="col-md-4">
+                    <div class="card border package-card" data-value="@pkg.Title" style="cursor: pointer;">
+                        <div class="position-relative">
+                            <img src="@pkg.ImageUrl" class="card-img-top" alt="@pkg.Title">
+                        </div>
+                        <div class="card-body text-center">
+                            <h6 class="fw-bold text-medium text-primary">@pkg.Title</h6>
+                            <p class="text-small text-primary mb-5">@pkg.Description</p>
+                            <button type="button" class="btn btn-secondary w-75 mb-2 shadow-bottom">Get it</button><br />
+                            <a href="#" class="small text-decoration-none">Learn more</a><br />
+                            <a href="#" class="text-success small text-decoration-none">Special conditions <i class="fa fa-file-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        
+        @{ ViewData["IsFormSubmission"] = true; }
+        @Html.Partial("_NavigationBtnPartial")
     </div>
+</form>
 
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const packageCards = document.querySelectorAll('.package-card');
+            const selectedPackageInput = document.getElementById('selectedPackage');
+            const nextBtn = document.getElementById('nextBtn');
 
-    <div class="row justify-content-center g-4 mx-lg-5 px-lg-5 mx-md-0 px-md-0">
-        <!-- Flexi Plus -->
-        <div class="col-md-4">
-            <div class="card">
-                <div class="position-relative">
-                    <img src="~/images/day_home_flexi_plus.png" class="card-img-top" alt="Flexi Plus">
-                    @* <span class="badge bg-danger position-absolute top-0 start-0 m-2">Special Offer</span> *@
-                </div>
-                <div class="card-body text-center">
-                    <h6 class="fw-bold text-medium text-primary">Volton Unique Flexi Plus</h6>
-                    <p class="text-small text-primary mb-5">Secure the lowest kilowatt-hour price on the energy market!</p>
-                    <button class="btn btn-success w-75 mb-2 shadow-bottom">Get it</button><br />
-                    <a href="#" class="small text-decoration-none">Learn more</a><br />
-                    <a href="#" class="text-success small text-decoration-none">Special conditions <i class="fa fa-file-alt"></i></a>
-                </div>
-            </div>
-        </div>
+            function enableNextButton() {
+                if (nextBtn) {
+                    nextBtn.classList.remove('disabled');
+                    nextBtn.removeAttribute('aria-disabled');
+                    nextBtn.removeAttribute('tabindex');
+                }
+            }
 
-        <!-- Flat -->
-        <div class="col-md-4">
-            <div class="card border ">
-                <img src="~/images/day_home_flat.png" class="card-img-top" alt="Flat Plan">
-                <div class="card-body text-center">
-                    <h6 class="fw-bold  text-medium text-primary">Volton Unique Flat</h6>
-                    <p class="text-small text-primary mb-5">Keep a fixed charge on your account for 24 months!</p>
-                    <button class="btn btn-light border w-75 mb-2 shadow-bottom">Get it</button><br />
-                    <a href="#" class="small text-decoration-none">Learn more</a><br />
-                    <a href="#" class="text-success small text-decoration-none">Special conditions <i class="fa fa-file-alt"></i></a>
-                </div>
-            </div>
-        </div>
+            function disableNextButton() {
+                if (nextBtn) {
+                    nextBtn.classList.add('disabled');
+                    nextBtn.setAttribute('aria-disabled', 'true');
+                    nextBtn.setAttribute('tabindex', '-1');
+                }
+            }
 
-        <!-- Flexi -->
-        <div class="col-md-4">
-            <div class="card border ">
-                <img src="~/images/day_home_flexi.png" class="card-img-top" alt="Flexi Plan">
-                <div class="card-body text-center">
-                    <h6 class="fw-bold text-medium text-primary">Volton Unique Flexi</h6>
-                    <p class=" text-small text-primary mb-5">Reduce your energy bill up to 43% for 24 months!</p>
-                    <button class="btn btn-light border w-75 mb-2 shadow-bottom">Get it</button><br />
-                    <a href="#" class="small text-decoration-none">Learn more</a><br />
-                    <a href="#" class="text-success small text-decoration-none">Special conditions <i class="fa fa-file-alt"></i></a>
-                </div>
-            </div>
-        </div>
+            packageCards.forEach(card => {
+                card.addEventListener('click', function () {
+                    packageCards.forEach(c => c.classList.remove('selected'));
+                    this.classList.add('selected');
+                    selectedPackageInput.value = this.getAttribute('data-value');
+                    enableNextButton();
+                });
+            });
 
-    </div>
+            function checkInitialSelection() {
+                const previouslySelected = "@Model.SelectedPackage";
+                if (previouslySelected) {
+                    selectedPackageInput.value = previouslySelected;
+                    const selectedCard = document.querySelector(`.package-card[data-value='${previouslySelected}']`);
+                    if (selectedCard) {
+                        selectedCard.classList.add('selected');
+                        enableNextButton();
+                    }
+                } else {
+                    disableNextButton();
+                }
+            }
 
-    
-</div>
-@Html.Partial("_NavigationBtnPartial")
-
-
+            // Run the check on page load
+            checkInitialSelection();
+        });
+    </script>
+}

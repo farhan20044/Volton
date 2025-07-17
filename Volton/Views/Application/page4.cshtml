@@ -1,103 +1,107 @@
-﻿
 @{
     ViewData["Title"] = "Supporting Documents";
     ViewData["HeaderText"] = "Online Application";
     ViewData["ShowStepper"] = true;
     ViewData["CurrentStep"] = 4;
-    ViewData["Title"] = "Warranty Calculation";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<style>
-    
 
-</style>
-
-<!-- Load Font Awesome for icons -->
+<!-- Load Font Awesome -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 <link href="~/css/page4.css" rel="stylesheet" />
+<body class="" style="overflow-x: hidden;">
+<div class="container px-4 px-md-5 my-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-9">
 
+            <h5 class="fw-semibold text-primary mb-4 text-center text-md-start">
+                Find out the supporting documents you will need to complete your online application!
+            </h5>
 
-<div class="container-fluid px-4 px-md-5 my-5 mt-5">
-        <h5 class="fw-semibold text-primary mb-4 text-center text-md-start ">
-            Find out the supporting documents you will need to complete your online application!
-        </h5>
+            <div class="row g-3  align-items-stretch">
+                <!-- Tab 1 -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card tab-card border-primary text-primary rounded-3 shadow-sm py-3 active" data-target="#onName">
+                        <div class="card-body text-center">
+                            <h6 class="fw-bold mb-1">Change provider</h6>
+                            <small>The meter is in my name</small>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="row g-3 mb-4 align-items-stretch">
+                <!-- Tab 2 -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card tab-card border-primary text-primary rounded-3 shadow-sm py-3 " data-target="#anotherName">
+                        <div class="card-body text-center">
+                            <h6 class="fw-bold mb-1">Change provider</h6>
+                            <small>on another name</small>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Tab 3 -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card tab-card border-primary text-primary rounded-3 shadow-sm py-3" data-target="#initialElectrification">
+                        <div class="card-body text-center">
+                            <h6 class="fw-bold mb-1">Initial Electrification</h6>
+                            <small>New connection</small>
+                        </div>
+                    </div>
+                </div>
 
-    
-<div class="col-12 col-md-6 col-lg-3">
-            <div class="card border-primary text-primary rounded-3 h-100 shadow-sm tab-card py-3">
-            <div class="card-body text-center">
-                <h6 class="fw-bold mb-1">Change provider</h6>
-                <small>The meter is in another name</small>
+                <!-- Tab 4 -->
+                <!-- Tab 4: Re-electrification -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card tab-card border-primary text-primary rounded-3 shadow-sm py-3" data-target="#reElectrification">
+                        <div class="card-body text-center">
+                            <h6 class="fw-bold mb-0">Re-electrification</h6>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-        </div>
-    </div>
 
 
-    <!-- Tab 2 -->
-    <div class="col-12 col-md-6 col-lg-3">
-            <div class="card border-primary text-primary rounded-3 h-100 shadow-sm tab-card py-3">
-            <div class="card-body text-center">
-                <h6 class="fw-bold mb-1">Change provider</h6>
-                <small>The meter is in another name</small>
+            <!-- Dynamic Content Panels -->
+            <div id="onName">
+                @Html.Partial("_ChangeProviderOnNamePartial")
             </div>
-        </div>
-    </div>
-
-    <!-- Tab 3 -->
-    <div class="col-12 col-md-6 col-lg-3">
-        <div class="card border-primary text-primary rounded-3 h-100 shadow-sm tab-card py-3">
-            <div class="card-body text-center">
-                <h6 class="fw-bold mb-1">Initial Electrification</h6>
-                <small>New connection</small>
+            <div id="anotherName" style="display: none;">
+                @Html.Partial("ChangeProviderOnAnotherName")
             </div>
-        </div>
-    </div>
-
-    <!-- Tab 4 -->
-    <div class="col-12 col-md-6 col-lg-3">
-        <div class="card border-primary text-primary rounded-3 h-100 shadow-sm tab-card d-flex align-items-center justify-content-center text-center py-3">
-            <div class="card-body">
-                <h6 class="fw-bold mb-0">Re-electrification</h6>
+            <div id="initialElectrification" style="display: none;">
+                @Html.Partial("_InitialElectrificationPartial")
             </div>
+            <div id="reElectrification" style="display: none;">
+                @Html.Partial("_ReElectrificationPartial")
+            </div>
+
         </div>
     </div>
 </div>
-
-
-        <!-- Necessary Documents Section -->
-        <div class="border rounded p-4">
-            <h5 class="fw-bold text-primary mb-4">Necessary Documents:</h5>
-
-            <p class="mb-2 text-success fw-bold ">1. Identity</p>
-            <p class="text-secondary">
-                Photocopy of ID (2 sides) or Passport or Residence Permit or Driver’s License
-            </p>
-
-            <p class="mb-2 text-success fw-bold mt-3">2. Account</p>
-            <ul class="text-secondary ps-3">
-                <li>Copy of last bill</li>
-                <li>Proof of payment if the due date has passed</li>
-            </ul>
-        </div>
-    </div>
-
+</body>
 
 @Html.Partial("_NavigationBtnPartial")
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
-
     <script>
         document.querySelectorAll('.tab-card').forEach(card => {
             card.addEventListener('click', function () {
                 document.querySelectorAll('.tab-card').forEach(c => c.classList.remove('active'));
                 this.classList.add('active');
+
+                // Hide all sections
+                ['#onName', '#anotherName', '#initialElectrification', '#reElectrification'].forEach(id => {
+                    document.querySelector(id).style.display = 'none';
+                });
+
+                // Show target section
+                const target = this.getAttribute('data-target');
+                if (target) {
+                    document.querySelector(target).style.display = 'block';
+                }
             });
         });
     </script>
-
 }
-
