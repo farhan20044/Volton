@@ -1,7 +1,11 @@
+@using Volton.Constants
+@using Volton.Models
+@model Volton.ViewModels.EmailVerificationViewModel
+
 @{
     ViewData["Title"] = "Email Verification";
-    ViewData["ShowStepper"] = true;
     ViewData["CurrentStep"] = 4;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="container mt-5 mb-5">
@@ -16,23 +20,43 @@
                 In case you did not receive a confirmation email, please fill in a new one.
             </p>
 
-            <!-- Email Input + Verify Button -->
             <form method="post">
                 <div class="mb-2 d-flex align-items-center justify-content-center">
-                    <input type="email" class="form-control text-center border-0 width-50 border-bottom-disabled" placeholder="E-mail" required />
+                    <input asp-for="Email" class="form-control text-center border-0 width-50 border-bottom-disabled" placeholder="E-mail" />
                 </div>
-                <button type="submit" class="btn btn-get-it-active px-5 text-white">
-                    <span class="px-4">Verification</span>
-                </button>
+                <span asp-validation-for="Email" class="text-danger"></span>
+                <div class="container mx-md-5 mx-sm-5 mx-lg-5 px-lg-5">
+                    @await Html.PartialAsync("_NavigationBtnPartial", new NavigationViewModel { PrevAction = PageNames.Documents, NextAction = PageNames.Onboarding, IsFormSubmission = true })
+                </div>
             </form>
-            
+            @section Scripts {
+            @await Html.PartialAsync("_ValidationScriptsPartial")
+    <script>
+        $(document).ready(function () {
+            var emailInput = $('#Email');
+            var nextButton = $('form button[type="submit"]');
+
+            function toggleButtonState() {
+                // Use a small timeout to allow jQuery validation to process
+                setTimeout(function() {
+                    if ($('form').valid()) {
+                        nextButton.removeClass('disabled').prop('disabled', false).attr('aria-disabled', 'false').removeAttr('tabindex');
+                    } else {
+                        nextButton.addClass('disabled').prop('disabled', true).attr('aria-disabled', 'true').attr('tabindex', '-1');
+                    }
+                }, 100);
+            }
+
+            // Run on input to check validity
+            emailInput.on('keyup blur', function () {
+                toggleButtonState();
+            });
+
+            // Initial check in case of browser auto-fill
+            toggleButtonState();
+        });
+    </script>
+    }
         </div>
-        
-    </div>
-
-
-    <div class="container mx-md-5 mx-sm-5 mx-lg-5 px-lg-5">
-        @Html.Partial("_NavigationBtnPartial")
-    </div>
-    
+    </div>    
 </div>

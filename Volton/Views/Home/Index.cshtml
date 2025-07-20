@@ -1,38 +1,35 @@
-﻿@{
+@{
     ViewData["Title"] = "Home";
     Layout = "~/Views/Shared/_HomeLayout.cshtml";
 }
 
-<head>
-    <link href="~/css/Home.css" rel="stylesheet" />
-    <link href="~/css/Common.css" rel="stylesheet" />
-    <link href="~/css/Cards.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-</head>
-
-@model Volton.Models.HomeIndexViewModel 
+@model Volton.ViewModels.HomeIndexViewModel 
 <body class="overflow-x-hidden">
+
 <div class="container mt-5 pb-0 ">
-    <form asp-controller="Application" asp-action="Page1" method="post" id="energyForm">
+    <form asp-controller="Home" asp-action="Index" method="post" id="energyForm">
         <div class="mb-4">
             <div class="d-flex justify-content-center gap-5 flex-wrap" id="energyOptions">
-                @foreach (var card in Model.Cards)
+                @for (int i = 0; i < Model.Cards.Count; i++)
                 {
-                    <div class="option-card bg-secondary p-3" data-value="@card.Title">
-                        <div class="checkmark d-none">
+                    var card = Model.Cards[i];
+                    var isChecked = Model.SelectedEnergyId.HasValue && Model.SelectedEnergyId.Value == card.Id;
+                    <label class="option-card bg-secondary p-3 @(isChecked ? "selected" : "")" style="cursor:pointer;" data-value="@card.Title" data-id="@card.Id">
+                        <input type="radio" name="EnergySelectionId" value="@card.Id" data-title="@card.Title" @(isChecked ? "checked" : "") />
+                        <div class="checkmark@(isChecked ? "" : " d-none")">
                             <i class="fas fa-check-circle"></i>
                         </div>
                         <div class="text-primary fw-medium text-small mb-4">@card.Title</div>
                         <img src="@Url.Content(card.ImagePath)" alt="@card.Title" class="img-fluid mb-4" style="width: 60px;">
-                    </div>
+                    </label>
                 }
             </div>
 
             <div class="text-end mt-5 me-5">
                 <button type="submit" class="btn btn-primary px-5 py-2 text-small disabled" id="nextBtn" tabindex="-1" aria-disabled="true">Next</button>
             </div>
-            <!-- Hidden field to store selected value -->
-            <input type="hidden" name="EnergySelection" id="energySelection" />
+            
+            
         </div>
     </form>
 </div>
@@ -41,18 +38,47 @@
 @section Scripts {
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        const optionCards = document.querySelectorAll('.option-card');
+        const radioButtons = document.querySelectorAll('input[type="radio"][name="EnergySelectionId"]');
         const nextBtn = document.getElementById('nextBtn');
-        const energySelection = document.getElementById('energySelection');
 
-        optionCards.forEach(card => {
-            card.addEventListener('click', function () {
-                optionCards.forEach(c => c.classList.remove('selected'));
-                this.classList.add('selected');
-                energySelection.value = this.getAttribute('data-value');
-                nextBtn.classList.remove('disabled');
-                nextBtn.removeAttribute('aria-disabled');
-                nextBtn.removeAttribute('tabindex');
+        // Function to update card selection
+        function updateCardSelection() {
+            // Remove selected class from all cards
+            document.querySelectorAll('.option-card').forEach(card => {
+                card.classList.remove('selected');
+                const radio = card.querySelector('input[type="radio"]');
+                const checkmark = card.querySelector('.checkmark');
+                if (checkmark) {
+                    checkmark.classList.add('d-none');
+                }
+            });
+
+            // Add selected class to checked card
+            const checkedRadio = document.querySelector('input[type="radio"][name="EnergySelectionId"]:checked');
+            if (checkedRadio) {
+                const selectedCard = checkedRadio.closest('.option-card');
+                selectedCard.classList.add('selected');
+                const checkmark = selectedCard.querySelector('.checkmark');
+                if (checkmark) {
+                    checkmark.classList.remove('d-none');
+                }
+                
+                // Enable next button if a card is selected
+                if (nextBtn) {
+                    nextBtn.classList.remove('disabled');
+                    nextBtn.removeAttribute('aria-disabled');
+                    nextBtn.removeAttribute('tabindex');
+                }
+            }
+        }
+
+        // Initialize selection on page load
+        updateCardSelection();
+
+        // Handle radio button changes
+        radioButtons.forEach(radio => {
+            radio.addEventListener('change', function () {
+                updateCardSelection();
             });
         });
     });

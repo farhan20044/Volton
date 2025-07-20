@@ -1,0 +1,30 @@
+﻿@model Volton.ViewModels.HomeIndexViewModel
+
+@* body content for appartment card *@
+<div class="mb-5">
+    <label class="text-primary">Already a customer?</label>
+    <div class="d-flex gap-3 flex-wrap mt-2">
+        <input type="radio" class="btn-check" name="AppartmentIsCustomer" id="appartment-customerYes" value="Yes" @(Model.AppartmentIsCustomer == "Yes" ? "checked" : "") autocomplete="off">
+        <label class="btn btn-secondary" for="appartment-customerYes">Yes</label>
+
+        <input type="radio" class="btn-check" name="AppartmentIsCustomer" id="appartment-customerNo" value="No" @(Model.AppartmentIsCustomer == "No" ? "checked" : "") autocomplete="off">
+        <label class="btn btn-secondary" for="appartment-customerNo">No</label>
+    </div>
+</div>
+
+
+<div class="mb-5">
+    <label class="text-primary">I'm interested in:</label>
+    <div class="d-flex gap-3 flex-wrap mt-2">
+
+        <input type="radio" class="btn-check" name="AppartmentInterestType" id="appartment-change" value="Change provider" @(Model.AppartmentInterestType == "Change provider" ? "checked" : "") autocomplete="off">
+        <label class="btn btn-secondary" for="appartment-change">Change provider</label>
+
+        <input type="radio" class="btn-check" name="AppartmentInterestType" id="appartment-new" value="New Connection" @(Model.AppartmentInterestType == "New Connection" ? "checked" : "") autocomplete="off">
+        <label class="btn btn-secondary" for="appartment-new">New Connection</label>
+
+        <input type="radio" class="btn-check" name="AppartmentInterestType" id="appartment-re" value="Re-electrification" @(Model.AppartmentInterestType == "Re-electrification" ? "checked" : "") autocomplete="off">
+        <label class="btn btn-secondary" for="appartment-re">Re-electrification</label>
+
+    </div>
+</div>

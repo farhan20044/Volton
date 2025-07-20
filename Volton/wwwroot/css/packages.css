@@ -1,0 +1,22 @@
+﻿body {
+}
+.card-img, .card-img-top {
+    border-top-left-radius: calc(1.00rem - 7px);
+    border-top-right-radius: calc(1.00rem - 7px);
+}
+
+.package-card .btn-success {
+    color: #fff !important;
+    background-color: #227130 !important;
+    border-color: #227130 !important;
+}
+
+.package-card .btn-success:hover {
+    color: #fff !important;
+    background-color: #227130 !important;
+}
+
+.package-card .btn-success:focus {
+    color: #fff !important;
+    background-color: #227130 !important;
+}

@@ -1,0 +1,22 @@
+
+@model Volton.ViewModels.HeaderViewModel
+
+<header>
+    <nav>
+        <div class="d-flex flex-row align-content-center justify-content-between">
+            @* left *@
+            <div class="ms-lg-5 ms-md-5 ms-sm-2 mt-2">
+                <a asp-controller="Home" asp-action="Index"> <img src="~/images/company_logo.png" alt="Logo" height="80" width="100" /> </a>
+            </div>
+            @* middle *@
+            <div style="color: #005ca9" class="m-3 d-flex flex-column align-items-center justify-content-center">
+                <h3 class="mb-1 text-center">@Model.Title</h3>
+                <p>@Model.Subtitle</p>
+            </div>
+            @* right *@
+            <div class="me-lg-5 me-md-5 me-sm-2 mt-2">
+                <img src="~/images/call_icon.png" alt="Call Number" height="38" width="108" />
+            </div>
+        </div>
+    </nav>
+</header>

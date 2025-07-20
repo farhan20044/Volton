@@ -1,0 +1,76 @@
+@using Volton.Constants
+@using Volton.Models
+@model Volton.ViewModels.PackagesViewModel
+@{
+    ViewData["Title"] = "Choose Your Package";
+    ViewData["HeaderText"] = "Online Application";
+    ViewData["CurrentStep"] = 2;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <link href="~/css/packages.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<form method="post" asp-action="Step2" id="packageForm" data-selected-package-id="@Model.SelectedPackageId">
+    <input type="hidden" id="selectedPackageId" name="selectedPackageId" value="" />
+    <div class="container py-5">
+        <div class="container my-5 ms-lg-5 ps-lg-5 ms-sm-5 ps-sm-5 ">
+            <div class="row align-items-center justify-content-between">
+                <!-- Left Text Section -->
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-lightblue ms-4 mb-2 border-none bg-lightblue">Daily</button>
+                    <h4 class="fw-semibold text-primary text-medium ms-1 mb-2">Choose the package that suits you</h4>
+                    <p class="text-primary ms-1 mb-0">
+                        Read the general conditions
+                        <a href="#" class="fw-bold text-primary text-decoration-none">here</a>
+                    </p>
+                </div>
+                <!-- Right Navigation Section -->
+                <div class="col-md-6 d-flex justify-content-end align-items-center gap-3 ">
+                    <!-- Dots -->
+                    <div class="d-flex gap-1">
+                        <span class="dot bg-primary rounded-circle" style="width: 8px; height: 8px;"></span>
+                        <span class="dot bg-secondary rounded-circle" style="width: 8px; height: 8px;"></span>
+                    </div>
+                    <!-- Arrows -->
+                    <div class="d-flex gap-3">
+                        <button type="button" id="scroll-left" class="btn btn-outline-primary  px-2 py-1 border-50" style="width: 37px;">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button type="button" id="scroll-right" class="btn btn-outline-primary px-2 py-1 border-50" style="width: 37px; height: 37px;">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="position-relative">
+            <div class="row flex-nowrap overflow-hidden g-4 mx-lg-5 px-lg-5 mx-md-0 px-md-0" id="package-carousel">
+            @foreach (var pkg in Model.Packages)
+            {
+                <div class="col-md-4">
+                    <div class="card border package-card" data-value="@pkg.Id" style="cursor: pointer;">
+                        <div class="position-relative">
+                            <img src="@pkg.ImageUrl" class="card-img-top" alt="@pkg.Title">
+                        </div>
+                        <div class="card-body text-center">
+                            <h6 class="fw-bold text-medium text-primary">@pkg.Title</h6>
+                            <p class="text-small text-primary mb-5">@pkg.Description</p>
+                            <button type="button" class="btn btn-secondary w-75 mb-2 shadow-bottom">Get it</button><br />
+                            <a href="#" class="small text-decoration-none">Learn more</a><br />
+                            <a href="#" class="text-success small text-decoration-none">Special conditions <i class="fa fa-file-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        
+        @await Html.PartialAsync("_NavigationBtnPartial", new NavigationViewModel { PrevAction = PageNames.Onboarding, NextAction = PageNames.Warenty, IsFormSubmission = true })
+    </div>
+</form>
+
+@section Scripts {
+    <script src="~/js/packages.js" asp-append-version="true"></script>
+}

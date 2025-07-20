@@ -2,72 +2,74 @@
 for details on configuring this project to bundle and minify static web assets. */
 
 a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
 }
 
 a {
-  color: #0077cc;
+    color: #0077cc;
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
 }
 
 .border-top {
-  border-top: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
 }
+
 .border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 .box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
 button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+    font-size: 1rem;
+    line-height: inherit;
 }
 
 .footer {
-  width: 100%;
-  line-height: 60px;
-  margin-top: auto;
+    width: 100%;
+    line-height: 60px;
+    margin-top: auto;
 }
 
 .footer-middle-images {
-  position: relative;
-  width: 50px;
-  height: 50px;
-  margin-bottom: 8px;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 8px;
 }
 
 .footer-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
 }
 
 .img-behind {
-  z-index: 1;
-  opacity: 0.7; 
+    z-index: 1;
+    opacity: 0.7;
 }
 
 .img-front {
-  z-index: 2;
+    z-index: 2;
 }
+
 .border-top-blue {
     border-top: 2px #005ca9 solid;
 }

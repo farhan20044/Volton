@@ -1,44 +1,17 @@
+﻿
+@model Volton.Models.NavigationViewModel
 
-@{
-    int currentStep = ViewData["CurrentStep"] as int? ?? 1;
-    string nextAction = "page2";
-    string prevAction = "page1";
-    switch (currentStep)
-    {
-        case 1:
-            nextAction = "page2";
-            
-            break;
-        case 2:
-            nextAction = "page3";
-            prevAction = "page1";
-            break;
-        case 3:
-            nextAction = "page4";
-            prevAction = "page2";
-            break;
-        case 4:
-            nextAction = "EmailVerification"; 
-            prevAction = "page3";
-            break;
-        default:
-            nextAction = "page2";
-            prevAction = "Index";
-            break;
-    }
-}
-<head>
-    <link href="~/css/Common.css" rel="stylesheet" />
-</head>
-<!-- Navigation -->
+<!-- Navigation Buttons-->
 <div class="d-flex justify-content-between mt-5 mb-5 pb-5">
-    <a class="btn px-4 py-2 text-small @(currentStep == 1 ? "disabled" : "")" asp-controller="Application" asp-action="@prevAction">Previous</a>
-    @if (ViewData["IsFormSubmission"] as bool? == true)
-    {
-        <button type="submit" id="nextBtn" class="btn btn-primary px-5 py-2 text-small disabled" aria-disabled="true" tabindex="-1">Next</button>
-    }
-    else
-    {
-        <a class="btn btn-primary px-5 py-2 text-small" asp-controller="Application" asp-action="@nextAction">Next</a>
-    }
+    <a class="btn px-4 py-2 text-small @(string.IsNullOrEmpty(Model.PrevAction) ? "disabled" : "")" asp-controller="Application" asp-action="@Model.PrevAction">Previous</a>
+
+    <button type="@(Model.IsFormSubmission ? "submit" : "button")"
+            id="@Model.NextButtonId"
+            class="btn btn-primary px-5 py-2 text-small @(Model.IsFormSubmission ? "disabled" : "")"
+            onclick="@(Model.IsFormSubmission ? null : $"window.location.href='{Url.Action(Model.NextAction, "Application")}'")"
+            aria-disabled="@(Model.IsFormSubmission ? "true" : "false")"
+            tabindex="@(Model.IsFormSubmission ? "-1" : null)">
+        Next
+    </button>
+    
 </div>

@@ -57,7 +57,6 @@
     box-shadow: none !important;
 }
 
-
 /*scrollbar edits*/
 ::-webkit-scrollbar {
     width: 1px; 
@@ -91,8 +90,8 @@
 .width-50 {
     width: 36%;
 }
-.width-10 {
-    width: 10%;
+.width-12 {
+    width: 12%;
 }
 .border-bottom{
     border-bottom: 2px black solid !important;
@@ -111,4 +110,21 @@
 .border-bottom-disabled {
     border-bottom: 2px #D3D3D3 solid !important;
     border-radius: 0px !important;
+}
+.step-line {
+    background-color: #e0e0e0;
+    height: 1px;
+    width: 40px; 
+}
+
+@media (min-width: 576px) {
+    .step-line {
+        width: 80px; 
+    }
+}
+
+@media (min-width: 992px) {
+    .step-line {
+        width: 120px; 
+    }
 }

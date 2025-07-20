@@ -1,0 +1,18 @@
+﻿.tab-card {
+    transition: all 0.3s ease;
+    min-height: 120px;
+    margin-bottom: 25px; 
+}
+
+.tab-card.active {
+        background-color: #005ca9 !important;
+        color: #fff !important;
+        box-shadow: 0 10px 20px rgba(0, 92, 169, 0.25);
+        min-height: 145px !important;
+        margin-bottom: 0px !important; 
+}
+
+.tab-card.active h6,
+.tab-card.active small {
+            color: #fff !important;
+}

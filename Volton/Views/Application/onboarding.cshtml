@@ -1,0 +1,44 @@
+@using Volton.Constants
+@using Volton.Models
+@model Volton.ViewModels.HomeIndexViewModel
+@{
+    ViewData["Title"] = "Online Application - Step 1";
+    // ViewData["HeaderText"] = "Online Application";
+    ViewData["CurrentStep"] = 1;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <link href="~/css/Cards.css" rel="stylesheet" />    
+</head>
+<div class="container p-0 m-0">
+
+    <form method="post" asp-action="Step1" id="onBoardingForm" data-selected-plan-id="@Model.SelectedPlanId">
+
+        <!-- Hidden inputs for JavaScript -->
+        <input type="hidden" id="selectedOption" name="selectedOption" />
+        <input type="hidden" id="selectedPlanId" name="selectedPlanId" />
+
+        <!-- Cards Section -->
+        @await Html.PartialAsync("~/Views/Shared/OnBoarding/_CardsPartial.cshtml", Model.Cards)
+
+        <div id="homeContent">
+            @await Html.PartialAsync("~/Views/Shared/OnBoarding/_HomeContent.cshtml", Model)
+        </div>
+        <div id="businessContent" style="display:none;">
+            @await Html.PartialAsync("~/Views/Shared/OnBoarding/_BusinessContent.cshtml", Model)
+        </div>
+        <div id="appartmentContent" style="display:none;">
+            @await Html.PartialAsync("~/Views/Shared/OnBoarding/_AppartmentContent.cshtml", Model)
+        </div>
+
+        @* Navigation buttons *@
+        @await Html.PartialAsync("_NavigationBtnPartial", new NavigationViewModel { NextAction = PageNames.Packages, IsFormSubmission = true })
+
+    </form>
+</div>
+
+@section Scripts {
+    <script src="~/js/onboarding.js" asp-append-version="true"></script>
+}
+
+        

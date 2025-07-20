@@ -1,0 +1,61 @@
+﻿@model Volton.ViewModels.HomeIndexViewModel
+
+<body>
+
+@* body content for home card *@
+<div class="mb-5">
+    <label class="text-primary">Already a customer?</label>
+    <div class="d-flex gap-3 flex-wrap mt-2">
+        <input type="radio" class="btn-check" name="HomeIsCustomer" id="customerYes" value="Yes" @(Model.HomeIsCustomer == "Yes" ? "checked" : "") autocomplete="off">
+        <label class="btn btn-secondary" for="customerYes">Yes</label>
+
+        <input type="radio" class="btn-check" name="HomeIsCustomer" id="customerNo" value="No" @(Model.HomeIsCustomer == "No" ? "checked" : "") autocomplete="off">
+        <label class="btn btn-secondary" for="customerNo">No</label>
+    </div>
+
+</div>
+
+
+
+<div class="mb-5">
+    <label class="text-primary">Interested in a second power supply?</label>
+    <div class="d-flex gap-3 flex-wrap mt-2">
+        <input type="radio" class="btn-check" name="HomeSecondPower" id="powerYes" value="Yes" @(Model.HomeSecondPower == "Yes" ? "checked" : "") autocomplete="off">
+        <label class="btn btn-secondary" for="powerYes">Yes</label>
+
+        <input type="radio" class="btn-check" name="HomeSecondPower" id="powerNo" value="No" @(Model.HomeSecondPower == "No" ? "checked" : "") autocomplete="off">
+        <label class="btn btn-secondary" for="powerNo">No</label>
+    </div>
+
+</div>
+
+<div class="mb-5">
+    <label class="text-primary">I'm interested in:</label>
+    <div class="d-flex gap-3 flex-wrap mt-2">
+
+        <input type="radio" class="btn-check" name="HomeInterestType" id="change" value="Change provider" @(Model.HomeInterestType == "Change provider" ? "checked" : "") autocomplete="off">
+        <label class="btn btn-secondary" for="change">Change provider</label>
+
+        <input type="radio" class="btn-check" name="HomeInterestType" id="new" value="New Connection" @(Model.HomeInterestType == "New Connection" ? "checked" : "") autocomplete="off">
+        <label class="btn btn-secondary" for="new">New Connection</label>
+
+        <input type="radio" class="btn-check" name="HomeInterestType" id="re" value="Re-electrification" @(Model.HomeInterestType == "Re-electrification" ? "checked" : "") autocomplete="off">
+        <label class="btn btn-secondary" for="re">Re-electrification</label>
+
+    </div>
+</div>
+
+
+<div class="mb-5">
+    <label class="text-primary">Do you have a Day or Night counter?</label>
+    <div class="d-flex gap-3 flex-wrap mt-2">
+        <input type="radio" class="btn-check" name="HomeCounterType" id="day" value="Daily" @(Model.HomeCounterType == "Daily" ? "checked" : "") autocomplete="off">
+        <label class="btn btn-secondary" for="day">Daily</label>
+
+        <input type="radio" class="btn-check" name="HomeCounterType" id="night" value="Nocturnal" @(Model.HomeCounterType == "Nocturnal" ? "checked" : "") autocomplete="off">
+        <label class="btn btn-secondary " for="night">Nocturnal</label>
+    </div>
+</div>
+
+</body>
+

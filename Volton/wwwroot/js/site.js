@@ -43,15 +43,24 @@ document.addEventListener('DOMContentLoaded', function () {
             } else if (value === 'business') {
                 if (homeContent) homeContent.style.display = 'none';
                 if (businessContent) businessContent.style.display = '';
-                if (appartmentContent) appartmentContent.style.display = 'none';
+                if (appartmentContent) businessContent.style.display = 'none';
             } else if (value === 'appartment') {
                 if (homeContent) homeContent.style.display = 'none';
-                if (businessContent) businessContent.style.display = 'none';
+                if (businessContent) homeContent.style.display = 'none';
                 if (appartmentContent) appartmentContent.style.display = '';
             }
 
             updateNextButtonState();
         });
+    });
+
+    // Show checkmark for pre-selected card on page load
+    optionCards.forEach(card => {
+        const radio = card.querySelector('input[type="radio"]');
+        if (radio && radio.checked) {
+            card.classList.add('active');
+            card.querySelector('.checkmark').classList.remove('d-none');
+        }
     });
     // Initial state
     updateNextButtonState();

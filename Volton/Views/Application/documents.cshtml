@@ -1,0 +1,116 @@
+@using Volton.Constants
+@using Volton.Models
+
+@{
+    ViewData["Title"] = "Supporting Documents";
+    ViewData["HeaderText"] = "Online Application";
+    ViewData["CurrentStep"] = 4;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/css/documents.css" rel="stylesheet" />
+<body class="" style="overflow-x: hidden;">
+<div class="container px-4 px-md-5 my-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-9">
+            <form method="post" asp-action="EmailVerification">
+                <h5 class="fw-semibold text-primary mb-4 text-center text-md-start">
+                    Find out the supporting documents you will need to complete your online application!
+                </h5>
+
+                <div class="row g-3  align-items-stretch">
+                    <!-- Tab 1 -->
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card tab-card border-primary text-primary rounded-3 shadow-sm py-3 active" data-target="#onName">
+                            <div class="card-body text-center">
+                                <h6 class="fw-bold mb-1">Change provider</h6>
+                                <small>The meter is in my name</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 2 -->
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card tab-card border-primary text-primary rounded-3 shadow-sm py-3 " data-target="#anotherName">
+                            <div class="card-body text-center">
+                                <h6 class="fw-bold mb-1">Change provider</h6>
+                                <small>on another name</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 3 -->
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card tab-card border-primary text-primary rounded-3 shadow-sm py-3" data-target="#initialElectrification">
+                            <div class="card-body text-center">
+                                <h6 class="fw-bold mb-1">Initial Electrification</h6>
+                                <small>New connection</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 4 -->
+                    <!-- Tab 4: Re-electrification -->
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card tab-card border-primary text-primary rounded-3 shadow-sm py-3" data-target="#reElectrification">
+                            <div class="card-body text-center">
+                                <h6 class="fw-bold mb-0">Re-electrification</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- Dynamic Content Panels -->
+                <div id="onName">
+                    @await Html.PartialAsync("~/Views/Shared/Documents/_ChangeProviderOnNamePartial.cshtml")
+                </div>
+                <div id="anotherName" style="display: none;">
+                        @await Html.PartialAsync("~/Views/Shared/Documents/ChangeProviderOnAnotherName.cshtml")
+                </div>
+                <div id="initialElectrification" style="display: none;">
+                        @await Html.PartialAsync("~/Views/Shared/Documents/_InitialElectrificationPartial.cshtml")
+                </div>
+                <div id="reElectrification" style="display: none;">
+                        @await Html.PartialAsync("~/Views/Shared/Documents/_ReElectrificationPartial.cshtml")
+                </div>
+
+                @await Html.PartialAsync("_NavigationBtnPartial", new NavigationViewModel { PrevAction = PageNames.Warenty, NextAction = PageNames.EmailVerification, IsFormSubmission = true })
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        document.querySelectorAll('.tab-card').forEach(card => {
+            card.addEventListener('click', function () {
+                document.querySelectorAll('.tab-card').forEach(c => c.classList.remove('active'));
+                this.classList.add('active');
+
+                // Hide all sections
+                ['#onName', '#anotherName', '#initialElectrification', '#reElectrification'].forEach(id => {
+                    document.querySelector(id).style.display = 'none';
+                });
+
+                // Show target section
+                const target = this.getAttribute('data-target');
+                if (target) {
+                    document.querySelector(target).style.display = 'block';
+                }
+            });
+        });
+        // Always enable Next button on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            const nextBtn = document.getElementById('nextBtn');
+            if (nextBtn) {
+                nextBtn.classList.remove('disabled');
+                nextBtn.removeAttribute('aria-disabled');
+                nextBtn.removeAttribute('tabindex');
+            }
+        });
+    </script>
+}

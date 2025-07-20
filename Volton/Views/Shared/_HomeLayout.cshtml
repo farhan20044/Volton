@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -9,77 +10,14 @@
     <link href="~/css/" rel="stylesheet" />
     <link rel="stylesheet" href="~/Volton.styles.css" asp-append-version="true" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="~/css/Home.css" rel="stylesheet" />
+    <link href="~/css/Common.css" rel="stylesheet" />
+    <link href="~/css/Cards.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 <body class="d-flex flex-column min-vh-100">
-    <header>
-        <nav>
-            <div class="d-flex flex-row align-content-center justify-content-between">
-            @* left *@
-                <div class="ms-5 mt-2">
-                    <a asp-controller="Home" asp-action="Index" > <img src="~/images/company_logo.png" alt="Logo" height="80" width="100" /> </a>
-                </div>
-            @* middle *@
-                <div style="color: #005ca9" class="m-3 d-flex flex-column align-items-center justify-content-center">
-                    <h3 class="mb-1">Welcome to online Application</h3>
-                    <p>Choose what interests you</p>
-                </div>
-            @* right *@
-                <div class="me-5 mt-3">
-                    <img src="~/images/call_icon.png" alt="Call Number" height="38" width="108" />
-                </div>
-            </div>
-
-            @* stepper *@
-            @{
-                int currentStep = ViewData["CurrentStep"] as int? ?? 1;
-                string StepClass(int step) {
-                    if (step < currentStep) return "bg-success text-white"; 
-                    if (step == currentStep) return "bg-primary text-white"; 
-                    return "border border-secondary text-secondary bg-white"; 
-                }
-            }
-
-            @if ((ViewData["ShowStepper"] as bool?) == true){
-    <div class="container-fluid px-0 mt-3 position-relative">
-        <div class="row align-items-center">
-            
-            <!-- Back to Home: hidden on small, left on lg+ -->
-            <div class="col-12 col-lg-2 d-none d-lg-block text-start ps-4">
-                <a href="/" class="text-primary fw-bold text-decoration-none">
-                    &lt; Back to home page
-                </a>
-            </div>
-
-            <!-- Stepper: always centered -->
-            <div class="col-12 col-lg-8 d-flex justify-content-center">
-                <div class="d-flex flex-wrap align-items-center justify-content-center gap-2 gap-md-3">
-                    @for (int i = 1; i <= 4; i++)
-                    {
-                        <div class="rounded-circle d-flex align-items-center justify-content-center fw-bold @StepClass(i)"
-                             style="width: 36px; height: 36px;">
-                            @i
-                        </div>
-                        @if (i < 4)
-                        {
-                            <div class="bg-light d-none d-sm-block" style="width: 120px; height: 2px;"></div>
-                        }
-                    }
-                </div>
-            </div>
-
-            <!-- Back to Home: visible only on small screens -->
-            <div class="col-12 d-block d-lg-none text-center mt-2">
-                <a href="/" class="text-primary fw-bold text-decoration-none">
-                    &lt; Back to home page
-                </a>
-            </div>
-        </div>
-    </div>
-}
-
-
-        </nav>        
-    </header>
+    @* passying model in it *@
+    @Html.Partial("_Header", new Volton.ViewModels.HeaderViewModel { Title = "Welcome to Online Application", Subtitle = "Choose what interests you" })
 
     @*Render Body Content*@
     <div class="container">
@@ -116,7 +54,6 @@
                 <div class="col-lg-4 col-md-4 col-sm-4 d-none d-sm-flex justify-content-center justify-content-md-end px-0">
                     <img src="~/images/right_footer.png" alt="right-footer" class="img-fluid" />
                 </div>
-
 
             </div>
         </div>
